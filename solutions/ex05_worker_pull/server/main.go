@@ -6,6 +6,7 @@ import (
 	"image/color/palette"
 	"image/png"
 	"log"
+	"math/rand"
 	"os"
 	"runtime"
 	"strconv"
@@ -41,6 +42,10 @@ func main() {
 	remaining := width * height
 	img := image.NewRGBA(image.Rect(0, 0, width, height))
 	palette := palette.Plan9
+
+	rand.Shuffle(len(palette), func(i, j int) {
+		palette[i], palette[j] = palette[j], palette[i]
+	})
 
 	workQueue := make(chan string, width*height)
 
