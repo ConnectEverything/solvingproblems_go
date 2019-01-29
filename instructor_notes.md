@@ -14,6 +14,10 @@ in the solutions folder in case students want to repeat the setup.
 
 1. Run `gnatsd -c resources/tls/tlsverify.conf`, port is 4443
 
+## Run the streaming server
+
+1. Run `go run nats-streaming-server.go -p 4223 -cid nats_course`
+
 ## Exercise Comments
 
 * In ex01 the go client will not get discovered servers on an initial connect, you can make that happen by closing 1 server and starting it after people run their solution.
